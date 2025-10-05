@@ -62,7 +62,7 @@ Unauthorized use against systems you do not own or have explicit written permiss
 - `pip` package manager
 - **Root/Admin privileges** (required for raw socket attacks)
 - uv tool for ease of use
-Install uv with [ curl -LsSf https://astral.sh/uv/install.sh | sh ]
+- You can install uv with this simple cmd: "curl -LsSf https://astral.sh/uv/install.sh | sh"
 
 ### Installation
 ```bash
