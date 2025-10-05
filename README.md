@@ -71,8 +71,8 @@ cd SilverWolF
 uv venv -p 3.10 --allow-existing --system-site-packages -v
 source .venv/bin/activate.fish
 pip install -r requirements.txt
-
-### Short But important Disclamer!
-- U know the rules~
+```
+### Last Reminder!
+- You know the rules~
 - Don't be an idiot
 
