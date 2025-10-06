@@ -1,3 +1,10 @@
+scapy
+aiohttp
+dnspython
+pyOpenSSL
+telebot
+shodan
+curl_cffi
 duckduckgo-search
 beautifulsoup4
 lxml
